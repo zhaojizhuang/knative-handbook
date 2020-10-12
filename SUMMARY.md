@@ -1,34 +1,26 @@
 # Summary
 * [内容简介](INTRODUCTION.md)
 * [前言](FOREWORD.md)
-* [第二章：Kubernetes基础]
-    * [2.3 Kubernetes API](chapter02/2.3-kubernetes_API.md)
-* [第三章：工作负载管理]
-    * [3.1 Pod]
-        * [3.1.1 Pod概述](chapter03/1.1-pod_overview.md)
-        * [3.1.1 Pod初体验](chapter03/1.2-pod_quick_start.md)
-    * [3.2 ReplicationController]
-        * [3.2.1 ReplicationController概述](chapter03/2.1-replicationcontroller_overview.md)
-        * [3.2.2 ReplicationController初体验](chapter03/2.2-replicationcontroller_quick_start.md)
-    * [3.3 ReplicaSet]
-        * [3.3.1 ReplicaSet概述](chapter03/3.1-replicaset_overview.md)
-        * [3.3.2 ReplicaSet初体验](chapter03/3.2-replicaset_quick_start.md)
-    * [3.4 Deployment]
-        * [3.4.1 Deployment概述](chapter03/4.1-deployment_overview.md)
-        * [3.4.2 Deployment初体验](chapter03/4.2-deployment_quickstart.md)
-    * [3.5 DaemonSet]
-        * [3.5.1 DaemonSet概述](chapter03/5.1-daemonset_overview.md)
-        * [3.5.2 DaemonSet初体验](chapter03/5.2-daemonset_quickstart.md)
-* [第四章：服务]
-    * [4.1 Service]
-        * [4.1.1 Service概述](chapter04/1.1-service_overview.md)
-        * [4.1.1 Service上手体验](chapter04/1.2-service_quickstart.md)
-* [第六章：配置管理]
-    * [6.1 Secret--机密信息管理]
-        * [6.1.1 Secret概述](chapter06/1.1-secret_overview.md)
-* [第七章：集群认证]
-    * [7.1 证书]
-        * [5.1.1 证书基础](chapter07/1.1-certificate.md)
-* [第十章：ResourceQuota]
-    * [10.1 ResourceQuota概述](chapter10/1.1-resourcequota_overview.md)
-   
+* [第一章：基本概念]
+    * [1.1 serverless 的前世今生](chapter01/1.1-basicconcept.md)
+    * [1.2 knative 简要介绍](chapter01/1.1-basicconcept.md)
+* [第二章：Serving]
+    * [2.1 简介]
+        * [2.1.1 Serving 概述](chapter01/1.1-basicconcept.md)
+        * [2.2 Serving 初体验](chapter01/1.1-basicconcept.md)
+    * [2.2 原理]
+        * [2.2.1 Serving 基本原理](chapter01/1.1-basicconcept.md)
+        * [2.2.1 Serving 基本原理](chapter01/1.1-basicconcept.md)
+* [第三章：Eventing]
+    * [3.1 Service]
+        * [3.1.1 Eventing 概述](chapter01/1.1-basicconcept.md)
+        * [3.1.2 Eventing 上手体验](chapter01/1.1-basicconcept.md)
+* [第四章: Knative 网关]
+    * [4.1 流量揭秘]
+        * [4.1.1 Eventing 概述](chapter01/1.1-basicconcept.md)
+* [第五章：knative 可观测性]
+    * [5.1 Trace ]
+        * [5.1.1 Trace概述](chapter01/1.1-basicconcept.md)
+* [第六章：knative 实践案例]
+    * [6.1 证书]
+        * [6.1.1 证书基础](chapter01/1.1-basicconcept.md)
