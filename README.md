@@ -15,12 +15,8 @@ Kubernetes 发展非常迅速，已经成为容器编排领域的领导者。Kub
 ### 在线阅读 <a id="&#x5728;&#x7EBF;&#x9605;&#x8BFB;"></a>
 
 * 中文：
-  * Gitbook: [https://kubernetes.feisky.xyz/](https://kubernetes.feisky.xyz/)
-  * [Github](https://github.com/feiskyer/kubernetes-handbook/blob/master/SUMMARY.md)
-  * [Github Pages](https://feisky.xyz/kubernetes-handbook/)
-  * [InfoQ](http://www.infoq.com/cn/minibooks/Kubernetes-handbook)
-* [English](https://kubernetes.feisky.xyz/v/en/)
-* PDF 电子书：点击 [这里](https://legacy.gitbook.com/download/pdf/book/feisky/kubernetes) 下载
+  * Gitbook: [zhaojizhuang.gitbook.io/knative](https://zhaojizhuang.gitbook.io/knative)
+  * [Github](https://github.com/zhaojizhuang/knative-handbook)
 
 ### 项目源码 <a id="&#x9879;&#x76EE;&#x6E90;&#x7801;"></a>
 
@@ -28,7 +24,7 @@ Kubernetes 发展非常迅速，已经成为容器编排领域的领导者。Kub
 
 #### 本书版本更新记录 <a id="&#x672C;&#x4E66;&#x7248;&#x672C;&#x66F4;&#x65B0;&#x8BB0;&#x5F55;"></a>
 
-如无特殊说明，本指南所有文档仅适用于 Kubernetes v1.6 及以上版本。详细更新记录见 [CHANGELOG](https://github.com/feiskyer/kubernetes-handbook/blob/master/CHANGELOG.md)。
+如无特殊说明，本指南所有文档仅适用于 Knative v0.21 及以上版本。详细更新记录见 [CHANGELOG](https://github.com/feiskyer/kubernetes-handbook/blob/master/CHANGELOG.md)。
 
 ### 微信公众号 <a id="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;"></a>
 
