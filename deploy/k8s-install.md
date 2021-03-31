@@ -2,7 +2,7 @@
 
 ### 1. kubernetes 安装
 
-此处不在赘述，可查看官网安装指南 
+此处不在赘述，可查看[官网安装指南](https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) 
 
 1. 安装 `docker`
 
