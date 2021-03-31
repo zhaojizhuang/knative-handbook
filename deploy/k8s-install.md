@@ -4,7 +4,17 @@
 
 此处不在赘述，可查看官网安装指南 
 
-1. 配置yum 源，对于国内访问不了kubernetes的问题，centos 可用阿里的`yum` 源,配置如下 
+1. 安装 `docker`
+
+配置国内的 `docker` `yum` 源
+
+```text
+yum-config-manager \
+    --add-repo \
+    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+```
+
+2. 配置 `kubernetes` `yum` 源，对于国内访问不了 `kubernetes` 的问题，`centos`  可用阿里的`yum` 源,配置如下 
 
 ```text
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
@@ -19,7 +29,7 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
 EOF
 ```
 
- 2. 安装 docker  kubelet  kubectl kubeadm
+ 2. 安装   `kubelet`  `kubectl` `kubeadm`
 
 ```text
 sudo apt-get update
