@@ -1,6 +1,13 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [序言](README.md)
+
+## 简介 <a id="summary"></a>
+
+* [Knative 简介](summary/knative-concept.md)
+
+---
+
 * [内容简介](introduction.md)
 
 ## 准备 <a id="deploy"></a>
@@ -10,9 +17,9 @@
 ---
 
 * [前言](foreword.md)
-* [\[第一章：基本概念\]](di-yi-zhang-ji-ben-gai-nian/README.md)
-  * [1.1 serverless 的前世今生](di-yi-zhang-ji-ben-gai-nian/1.1-basicconcept.md)
-  * [1.2 knative 简要介绍](di-yi-zhang-ji-ben-gai-nian/1.1-basicconcept-1.md)
+* [基本概念\]](concept/README.md)
+  * [1.1 serverless 的前世今生](concept/1.1-basicconcept.md)
+  * [1.2 knative 简要介绍](concept/1.1-basicconcept-1.md)
 * [\[第二章：Serving\]](di-er-zhang-serving/README.md)
   * [\[2.1 简介\]](di-er-zhang-serving/2.1-jian-jie/README.md)
     * [2.1.1 Serving 概述](di-er-zhang-serving/2.1-jian-jie/1.1-basicconcept.md)
