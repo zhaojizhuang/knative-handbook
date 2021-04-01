@@ -6,13 +6,10 @@
 
 * [Knative 简介](summary/knative-concept.md)
 
----
-
-* [内容简介](introduction.md)
-
-## 准备 <a id="deploy"></a>
+## 安装部署 <a id="deploy"></a>
 
 * [kubernetes 安装](deploy/k8s-install.md)
+* [Knative 安装](deploy/knative-an-zhuang.md)
 
 ---
 
