@@ -1,34 +1,41 @@
-# Summary
-* [内容简介](INTRODUCTION.md)
-* [前言](FOREWORD.md)
-* [第二章：Kubernetes基础]
-    * [2.3 Kubernetes API](chapter02/2.3-kubernetes_API.md)
-* [第三章：工作负载管理]
-    * [3.1 Pod]
-        * [3.1.1 Pod概述](chapter03/1.1-pod_overview.md)
-        * [3.1.1 Pod初体验](chapter03/1.2-pod_quick_start.md)
-    * [3.2 ReplicationController]
-        * [3.2.1 ReplicationController概述](chapter03/2.1-replicationcontroller_overview.md)
-        * [3.2.2 ReplicationController初体验](chapter03/2.2-replicationcontroller_quick_start.md)
-    * [3.3 ReplicaSet]
-        * [3.3.1 ReplicaSet概述](chapter03/3.1-replicaset_overview.md)
-        * [3.3.2 ReplicaSet初体验](chapter03/3.2-replicaset_quick_start.md)
-    * [3.4 Deployment]
-        * [3.4.1 Deployment概述](chapter03/4.1-deployment_overview.md)
-        * [3.4.2 Deployment初体验](chapter03/4.2-deployment_quickstart.md)
-    * [3.5 DaemonSet]
-        * [3.5.1 DaemonSet概述](chapter03/5.1-daemonset_overview.md)
-        * [3.5.2 DaemonSet初体验](chapter03/5.2-daemonset_quickstart.md)
-* [第四章：服务]
-    * [4.1 Service]
-        * [4.1.1 Service概述](chapter04/1.1-service_overview.md)
-        * [4.1.1 Service上手体验](chapter04/1.2-service_quickstart.md)
-* [第六章：配置管理]
-    * [6.1 Secret--机密信息管理]
-        * [6.1.1 Secret概述](chapter06/1.1-secret_overview.md)
-* [第七章：集群认证]
-    * [7.1 证书]
-        * [5.1.1 证书基础](chapter07/1.1-certificate.md)
-* [第十章：ResourceQuota]
-    * [10.1 ResourceQuota概述](chapter10/1.1-resourcequota_overview.md)
-   
+# Table of contents
+
+* [序言](README.md)
+
+## 简介 <a id="summary"></a>
+
+* [Knative 简介](summary/knative-concept.md)
+
+## 安装部署 <a id="deploy"></a>
+
+* [kubernetes 安装](deploy/k8s-install.md)
+* [isito 安装](deploy/isito-an-zhuang.md)
+* [Knative 安装](deploy/knative-an-zhuang.md)
+
+---
+
+* [前言](foreword.md)
+* [基本概念\]](concept/README.md)
+  * [1.1 serverless 的前世今生](concept/1.1-basicconcept.md)
+  * [1.2 knative 简要介绍](concept/1.1-basicconcept-1.md)
+* [\[第二章：Serving\]](di-er-zhang-serving/README.md)
+  * [\[2.1 简介\]](di-er-zhang-serving/2.1-jian-jie/README.md)
+    * [2.1.1 Serving 概述](di-er-zhang-serving/2.1-jian-jie/1.1-basicconcept.md)
+    * [2.2 Serving 初体验](di-er-zhang-serving/2.1-jian-jie/1.1-basicconcept-1.md)
+  * [\[2.2 原理\]](di-er-zhang-serving/2.2-yuan-li/README.md)
+    * [2.2.1 Serving 基本原理](di-er-zhang-serving/2.2-yuan-li/1.1-basicconcept.md)
+    * [2.2.1 Serving 基本原理](di-er-zhang-serving/2.2-yuan-li/1.1-basicconcept-1.md)
+* [\[第三章：Eventing\]](di-san-zhang-eventing/README.md)
+  * [\[3.1 Service\]](di-san-zhang-eventing/3.1-service/README.md)
+    * [3.1.1 Eventing 概述](di-san-zhang-eventing/3.1-service/1.1-basicconcept.md)
+    * [3.1.2 Eventing 上手体验](di-san-zhang-eventing/3.1-service/1.1-basicconcept-1.md)
+* [\[第四章: Knative 网关\]](di-si-zhang-knative-wang-guan/README.md)
+  * [\[4.1 流量揭秘\]](di-si-zhang-knative-wang-guan/4.1-liu-liang-jie-mi/README.md)
+    * [4.1.1 Eventing 概述](di-si-zhang-knative-wang-guan/4.1-liu-liang-jie-mi/1.1-basicconcept.md)
+* [\[第五章：knative 可观测性\]](di-wu-zhang-knative-ke-guan-ce-xing/README.md)
+  * [\[5.1 Trace \]](di-wu-zhang-knative-ke-guan-ce-xing/5.1-trace/README.md)
+    * [5.1.1 Trace概述](di-wu-zhang-knative-ke-guan-ce-xing/5.1-trace/1.1-basicconcept.md)
+* [\[第六章：knative 实践案例\]](di-liu-zhang-knative-shi-jian-an-li/README.md)
+  * [\[6.1 证书\]](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/README.md)
+    * [6.1.1 证书基础](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/1.1-basicconcept.md)
+
