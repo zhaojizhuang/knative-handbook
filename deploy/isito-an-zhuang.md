@@ -27,7 +27,7 @@ apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 metadata:
   namespace: istio-system
-  name: example-istiocontrolplane
+  name: istiocontrolplane
 spec:
   profile: demo
 EO
@@ -47,23 +47,23 @@ spec:
   components:
     ingressGateways:
       - enabled: true
-        name: istio-ingressgateway
+        name: istio-ingressgateway #这个是默认启用的
       - enabled: true
         label:
           app: cluster-local-gateway
           istio: cluster-local-gateway
-        name: cluster-local-gateway
+        name: cluster-local-gateway  # 这个默认是不启用的，如果 knative 启用集群内访问，这里要打开
   meshConfig:
-    rootNamespace: istio-system
+    rootNamespace: istio-system #istio的 namespace
   values:
     global:
-      istioNamespace: istio-system
+      istioNamespace: istio-system #istio的 namespace
       hub: docker.io/istio  # 此处可以改为自己的私有仓库
-      tag: 1.8.1
-      imagePullPolicy: IfNotPresent
+      tag: 1.8.0  # 指定 istio 组件的版本
+      imagePullPolicy: IfNotPresent # 指定镜像拉取策略
       proxy:
-        clusterDomain: cluster.local
-      trustDomain: cluster.local
+        clusterDomain: cluster.local # 如果 k8s 的域名 后缀不是 cluster.local,要改这里
+      trustDomain: cluster.local  # 同上
 EO
 ```
 {% endtab %}
