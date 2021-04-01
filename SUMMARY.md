@@ -9,6 +9,7 @@
 ## 安装部署 <a id="deploy"></a>
 
 * [kubernetes 安装](deploy/k8s-install.md)
+* [isito 安装](deploy/isito-an-zhuang.md)
 * [Knative 安装](deploy/knative-an-zhuang.md)
 
 ---
