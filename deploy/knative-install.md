@@ -18,10 +18,6 @@ kubectl apply -f https://github.com/knative/operator/releases/download/v0.21.0/o
 
 如果不指定 ，系统默认适配的 网络插件是 istio, 可以看到 knative 对接 istio的组件（`isito-webhook`,`networking-istio`） 已经安装完成。
 
-如果还没有安装 **istio** 系统组件,可以参考上一章节，已经安装可以直接跳过。
-
-{% page-ref page="isito-install.md" %}
-
 ```text
 kubectl get deployment -n knative-serving
 
@@ -35,7 +31,9 @@ networking-istio   1/1     1            1           12s
 webhook            1/1     1            1           17s
 ```
 
+如果还没有安装 **istio** 系统组件,可以参考上一章节，已经安装可以直接跳过。
 
+{% page-ref page="isito-install.md" %}
 
 ## 4. 安装 Eventing
 
