@@ -34,7 +34,7 @@ metadata:
   name: istiocontrolplane
 spec:
   profile: demo
-EO
+EOF
 ```
 {% endtab %}
 
@@ -68,7 +68,7 @@ spec:
       proxy:
         clusterDomain: cluster.local # 如果 k8s 的域名 后缀不是 cluster.local,要改这里
       trustDomain: cluster.local  # 同上
-EO
+EOF
 ```
 {% endtab %}
 {% endtabs %}
