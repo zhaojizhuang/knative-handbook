@@ -6,6 +6,10 @@
 
  安装 operator deployment 和 operator crd，此处安装的是 istio 1.8.0版本，[官网安装链接](https://istio.io/latest/docs/setup/install/operator/)
 
+首先下载 `istioctl` [https://github.com/istio/istio/releases/](https://github.com/istio/istio/releases/)
+
+ 此处下载的是 `istioctl`  `istio 1.8.0` 版本
+
 ```yaml
 istioctl operator  dump --hub docker.io/istio > istio_operator.yaml
 ```
