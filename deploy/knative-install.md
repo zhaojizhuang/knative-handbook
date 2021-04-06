@@ -12,35 +12,15 @@ kubectl apply -f https://github.com/knative/operator/releases/download/v0.21.0/o
 
 ## 2. 安装 Serving 
 
-### 1. 安装 istio 组件
-
-如果不指定 ，系统默认适配的 网络插件是 istio, 可以看到 knative 对接 istio的组件（`isito-webhook`,`networking-istio`） 已经安装完成。
-
-```text
-kubectl get deployment -n knative-serving
-
-NAME               READY   UP-TO-DATE   AVAILABLE   AGE
-activator          1/1     1            1           18s
-autoscaler         1/1     1            1           18s
-autoscaler-hpa     1/1     1            1           14s
-controller         1/1     1            1           18s
-istio-webhook      1/1     1            1           12s
-networking-istio   1/1     1            1           12s
-webhook            1/1     1            1           17s
-```
-
-如果还没有安装 **istio** 系统组件,可以参考上一章节，已经安装可以直接跳过。
-
-{% page-ref page="isito-install.md" %}
-
-### 2. 通过 CR 安装 Serving 组件
+### 1. 通过 CR 安装 Serving 组件
 
 ```yaml
-kubectl create ns knative-serving
-```
-
-```yaml
-kubectl apply -f - <<EOF
+cat <<-EOF | kubectl apply -f -
+apiVersion: v1
+kind: Namespace
+metadata:
+ name: knative-serving
+---
 apiVersion: operator.knative.dev/v1alpha1
 kind: KnativeServing
 metadata:
@@ -82,8 +62,29 @@ spec:
       istio-webhook/webhook: gcr.io/knative-releases/knative.dev/net-istio/cmd/webhook:v0.21.0
       networking-istio: gcr.io/knative-releases/knative.dev/net-istio/cmd/controller:v0.21.0
       migrate: gcr.io/knative-releases/knative.dev/serving/vendor/knative.dev/pkg/apiextensions/storageversion/cmd/migrate@sha256:4e44b147321c96767328f6c6551964c93c9805ae14ff9f99a01c01a02c056a38
-EOF  
+EOF
 ```
+
+### 2. 安装 istio 组件
+
+如果不指定 ，系统默认适配的 网络插件是 istio, 可以看到 knative 对接 istio的组件（`isito-webhook`,`networking-istio`） 已经安装完成。
+
+```text
+kubectl get deployment -n knative-serving
+
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+activator          1/1     1            1           18s
+autoscaler         1/1     1            1           18s
+autoscaler-hpa     1/1     1            1           14s
+controller         1/1     1            1           18s
+istio-webhook      1/1     1            1           12s
+networking-istio   1/1     1            1           12s
+webhook            1/1     1            1           17s
+```
+
+如果还没有安装 **istio** 系统组件,可以参考上一章节，已经安装可以直接跳过。
+
+{% page-ref page="isito-install.md" %}
 
 ### 3. 查看安装结果
 
@@ -97,12 +98,15 @@ knative-serving   0.21.0    True
 
 ### 1. 通过 CR 安装 Eventing 组件
 
-```text
-kubectl create ns knative-eventing
-```
-
+{% tabs %}
+{% tab title="Natss channel" %}
 ```yaml
-kubectl apply -f - <<EOF
+cat <<-EOF | kubectl apply -f -
+apiVersion: v1
+kind: Namespace
+metadata:
+ name: knative-eventing
+---
 apiVersion: operator.knative.dev/v1alpha1
 kind: KnativeEventing
 metadata:
@@ -141,4 +145,39 @@ EOF
      # sugar-controller/controller: gcr.io/knative-releases/knative.dev/eventing/cmd/sugar_controller:v0.21.0
 #EOF
 ```
+{% endtab %}
+
+{% tab title="默认 channel" %}
+```yaml
+cat <<-EOF | kubectl apply -f -
+apiVersion: v1
+kind: Namespace
+metadata:
+ name: knative-eventing
+---
+apiVersion: operator.knative.dev/v1alpha1
+kind: KnativeEventing
+metadata:
+  name: knative-eventing
+  namespace: knative-eventing
+spec:
+  version: 0.21.0
+  defaultBrokerClass: MTChannelBasedBroker
+EOF
+  # replace images 此处可换为自己的私有镜像,这里用的原生默认的镜像，如果要自己替换，按照下面的选项一次替换即可
+  #registry: 
+    #override:
+     # eventing-controller/eventing-controller: gcr.io/knative-releases/knative.dev/eventing/cmd/controller:v0.21.0
+     # eventing-webhook/eventing-webhook: gcr.io/knative-releases/knative.dev/eventing/cmd/webhook:v0.21.0
+     # imc-controller/controller: gcr.io/knative-releases/knative.dev/eventing/cmd/in_memory/channel_controller:v0.21.0
+     # imc-dispatcher/dispatcher: gcr.io/knative-releases/knative.dev/eventing/cmd/in_memory/channel_dispatcher:v0.21.0
+     # mt-broker-controller/mt-broker-controller: gcr.io/knative-releases/knative.dev/eventing/cmd/mtchannel_broker:v0.21.0
+     # mt-broker-filter/filter: gcr.io/knative-releases/knative.dev/eventing/cmd/mtbroker/filter:v0.21.0
+     # mt-broker-ingress/ingress: gcr.io/knative-releases/knative.dev/eventing/cmd/mtbroker/ingress:v0.21.0
+     # pingsource-mt-adapter/dispatcher: gcr.io/knative-releases/knative.dev/eventing/cmd/mtping:v0.21.0
+     # sugar-controller/controller: gcr.io/knative-releases/knative.dev/eventing/cmd/sugar_controller:v0.21.0
+#EOF
+```
+{% endtab %}
+{% endtabs %}
 
