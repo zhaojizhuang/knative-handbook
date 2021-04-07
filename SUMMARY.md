@@ -20,12 +20,12 @@
   * [activator](serving/component/activator.md)
 * [资源对象](serving/resource.md)
 
-## 3. Eventing <a id="eventing1"></a>
+## 3. Eventing <a id="eventing"></a>
 
-* [CloudEvents](eventing1/cloudevents.md)
-* [功能及配置](eventing1/gong-neng-ji-pei-zhi.md)
-* [核心组件](eventing1/he-xin-zu-jian.md)
-* [资源对象](eventing1/zi-yuan-dui-xiang.md)
+* [CloudEvents](eventing/cloudevents.md)
+* [功能及配置](eventing/gong-neng-ji-pei-zhi.md)
+* [核心组件](eventing/he-xin-zu-jian.md)
+* [资源对象](eventing/zi-yuan-dui-xiang.md)
 
 ## 4. knative 可观测性 <a id="observe"></a>
 
