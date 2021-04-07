@@ -28,9 +28,9 @@
 * [\[第五章：knative 可观测性\]](di-wu-zhang-knative-ke-guan-ce-xing/README.md)
   * [\[5.1 Trace \]](di-wu-zhang-knative-ke-guan-ce-xing/5.1-trace/README.md)
     * [5.1.1 Trace概述](di-wu-zhang-knative-ke-guan-ce-xing/5.1-trace/1.1-basicconcept.md)
-* [\[第六章：knative 实践案例\]](di-liu-zhang-knative-shi-jian-an-li/README.md)
-  * [\[6.1 证书\]](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/README.md)
-    * [6.1.1 证书基础](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/1.1-basicconcept.md)
+* [knative 实践案例](practice/README.md)
+  * [\[6.1 证书\]](practice/6.1-zheng-shu/README.md)
+    * [6.1.1 证书基础](practice/6.1-zheng-shu/1.1-basicconcept.md)
 
 ## Eventing
 
