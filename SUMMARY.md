@@ -12,6 +12,13 @@
 * [isito 安装](deploy/isito-install.md)
 * [Knative 安装](deploy/knative-install.md)
 
+## Serving <a id="serving-1"></a>
+
+* [核心组件](serving-1/he-xin-zu-jian/README.md)
+  * [autoscaler](serving-1/he-xin-zu-jian/autoscaler.md)
+  * [activator](serving-1/he-xin-zu-jian/activator.md)
+* [资源对象](serving-1/zi-yuan-dui-xiang.md)
+
 ---
 
 * [Serving](serving/README.md)
@@ -29,10 +36,4 @@
 * [\[第六章：knative 实践案例\]](di-liu-zhang-knative-shi-jian-an-li/README.md)
   * [\[6.1 证书\]](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/README.md)
     * [6.1.1 证书基础](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/1.1-basicconcept.md)
-
-## Serving <a id="serving-1"></a>
-
-* [核心组件](serving-1/he-xin-zu-jian/README.md)
-  * [activator](serving-1/he-xin-zu-jian/activator.md)
-* [资源对象](serving-1/zi-yuan-dui-xiang.md)
 
