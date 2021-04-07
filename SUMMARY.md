@@ -38,3 +38,9 @@
   * [\[6.1 证书\]](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/README.md)
     * [6.1.1 证书基础](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/1.1-basicconcept.md)
 
+## Eventing
+
+* [功能及配置](eventing/gong-neng-ji-pei-zhi.md)
+* [核心组件](eventing/he-xin-zu-jian.md)
+* [资源对象](eventing/zi-yuan-dui-xiang.md)
+
