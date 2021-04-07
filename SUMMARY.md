@@ -37,5 +37,5 @@
 
 ## 6. knative 实践案例 <a id="06practice"></a>
 
-* [GRPC](06practice/untitled.md)
+* [GRPC示例](06practice/untitled.md)
 

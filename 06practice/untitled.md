@@ -1,4 +1,4 @@
-# GRPC
+# GRPC示例
 
 [https://github.com/socketio/socket.io/tree/master/examples/whiteboard](https://github.com/socketio/socket.io/tree/master/examples/whiteboard)
 
