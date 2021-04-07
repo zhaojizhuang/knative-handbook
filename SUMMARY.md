@@ -22,6 +22,7 @@
 
 ## 3. Eventing <a id="eventing1"></a>
 
+* [CloudEvents](eventing1/cloudevents.md)
 * [功能及配置](eventing1/gong-neng-ji-pei-zhi.md)
 * [核心组件](eventing1/he-xin-zu-jian.md)
 * [资源对象](eventing1/zi-yuan-dui-xiang.md)
