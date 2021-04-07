@@ -20,25 +20,26 @@
   * [activator](serving-1/component/activator.md)
 * [资源对象](serving-1/resource.md)
 
----
-
-* [\[第四章: Knative 网关\]](di-si-zhang-knative-wang-guan/README.md)
-  * [\[4.1 流量揭秘\]](di-si-zhang-knative-wang-guan/4.1-liu-liang-jie-mi/README.md)
-    * [4.1.1 Eventing 概述](di-si-zhang-knative-wang-guan/4.1-liu-liang-jie-mi/1.1-basicconcept.md)
-* [\[第五章：knative 可观测性\]](di-wu-zhang-knative-ke-guan-ce-xing/README.md)
-  * [\[5.1 Trace \]](di-wu-zhang-knative-ke-guan-ce-xing/5.1-trace/README.md)
-    * [5.1.1 Trace概述](di-wu-zhang-knative-ke-guan-ce-xing/5.1-trace/1.1-basicconcept.md)
-* [knative 实践案例](practice/README.md)
-  * [\[6.1 证书\]](practice/6.1-zheng-shu/README.md)
-    * [6.1.1 证书基础](practice/6.1-zheng-shu/1.1-basicconcept.md)
-
 ## Eventing
 
 * [功能及配置](eventing/gong-neng-ji-pei-zhi.md)
 * [核心组件](eventing/he-xin-zu-jian.md)
 * [资源对象](eventing/zi-yuan-dui-xiang.md)
 
+---
+
+* [\[第四章: Knative 网关\]](di-si-zhang-knative-wang-guan/README.md)
+  * [\[4.1 流量揭秘\]](di-si-zhang-knative-wang-guan/4.1-liu-liang-jie-mi/README.md)
+    * [4.1.1 Eventing 概述](di-si-zhang-knative-wang-guan/4.1-liu-liang-jie-mi/1.1-basicconcept.md)
+* [knative 可观测性](observe/README.md)
+  * [\[5.1 Trace \]](observe/5.1-trace/README.md)
+    * [5.1.1 Trace概述](observe/5.1-trace/1.1-basicconcept.md)
+
 ## 源码解读 <a id="code-read"></a>
 
 * [Untitled](code-read/untitled.md)
+
+## knative 实践案例 <a id="practice"></a>
+
+* [Untitled](practice/untitled.md)
 
