@@ -19,12 +19,12 @@
   * [autoscaler](serving-1/component/autoscaler.md)
   * [activator](serving-1/component/activator.md)
 * [资源对象](serving-1/resource.md)
+* [Eventing](serving-1/eventing/README.md)
+  * [功能及配置](serving-1/eventing/gong-neng-ji-pei-zhi.md)
+  * [资源对象](serving-1/eventing/zi-yuan-dui-xiang.md)
+  * [核心组件](serving-1/eventing/he-xin-zu-jian.md)
 
-## Eventing
-
-* [功能及配置](eventing/gong-neng-ji-pei-zhi.md)
-* [核心组件](eventing/he-xin-zu-jian.md)
-* [资源对象](eventing/zi-yuan-dui-xiang.md)
+## Eventing <a id="eventing1"></a>
 
 ---
 
@@ -37,7 +37,7 @@
 
 ## 源码解读 <a id="code-read"></a>
 
-* [Untitled](code-read/untitled.md)
+* [Untitled](code-read/untitled-1.md)
 
 ## knative 实践案例 <a id="practice"></a>
 
