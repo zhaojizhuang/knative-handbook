@@ -6,36 +6,36 @@
 
 * [Knative 简介](summary/knative-concept.md)
 
-## 1. 安装部署 <a id="deploy"></a>
+## 1. 安装部署 <a id="01deploy"></a>
 
-* [kubernetes 安装](deploy/k8s-install.md)
-* [isito 安装](deploy/isito-install.md)
-* [Knative 安装](deploy/knative-install.md)
+* [kubernetes 安装](01deploy/k8s-install.md)
+* [isito 安装](01deploy/isito-install.md)
+* [Knative 安装](01deploy/knative-install.md)
 
-## 2. Serving <a id="serving"></a>
+## 2. Serving <a id="02serving"></a>
 
-* [功能及配置](serving/config.md)
-* [核心组件](serving/component/README.md)
-  * [autoscaler](serving/component/autoscaler.md)
-  * [activator](serving/component/activator.md)
-* [资源对象](serving/resource.md)
+* [功能及配置](02serving/config.md)
+* [核心组件](02serving/component/README.md)
+  * [autoscaler](02serving/component/autoscaler.md)
+  * [activator](02serving/component/activator.md)
+* [资源对象](02serving/resource.md)
 
-## 3. Eventing <a id="eventing"></a>
+## 3. Eventing <a id="03eventing"></a>
 
-* [CloudEvents](eventing/cloudevents.md)
-* [功能及配置](eventing/gong-neng-ji-pei-zhi.md)
-* [核心组件](eventing/he-xin-zu-jian.md)
-* [资源对象](eventing/zi-yuan-dui-xiang.md)
+* [CloudEvents](03eventing/cloudevents.md)
+* [功能及配置](03eventing/gong-neng-ji-pei-zhi.md)
+* [核心组件](03eventing/he-xin-zu-jian.md)
+* [资源对象](03eventing/zi-yuan-dui-xiang.md)
 
-## 4. knative 可观测性 <a id="observe"></a>
+## 4. knative 可观测性 <a id="04observe"></a>
 
-* [Untitled](observe/untitled.md)
+* [Untitled](04observe/untitled.md)
 
-## 5. 源码解读 <a id="code-read"></a>
+## 5. 源码解读 <a id="05code-read"></a>
 
-* [Untitled](code-read/untitled-1.md)
+* [Untitled](05code-read/untitled-1.md)
 
-## 6. knative 实践案例 <a id="practice"></a>
+## 6. knative 实践案例 <a id="06practice"></a>
 
-* [Untitled](practice/untitled.md)
+* [Untitled](06practice/untitled.md)
 
