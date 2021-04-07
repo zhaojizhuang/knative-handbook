@@ -14,10 +14,11 @@
 
 ## Serving <a id="serving-1"></a>
 
-* [核心组件](serving-1/he-xin-zu-jian/README.md)
-  * [autoscaler](serving-1/he-xin-zu-jian/autoscaler.md)
-  * [activator](serving-1/he-xin-zu-jian/activator.md)
-* [资源对象](serving-1/zi-yuan-dui-xiang.md)
+* [功能及配置](serving-1/config.md)
+* [核心组件](serving-1/component/README.md)
+  * [autoscaler](serving-1/component/autoscaler.md)
+  * [activator](serving-1/component/activator.md)
+* [资源对象](serving-1/resource.md)
 
 ---
 
