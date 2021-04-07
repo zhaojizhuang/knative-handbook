@@ -22,12 +22,6 @@
 
 ---
 
-* [Serving](serving/README.md)
-  * [Untitled](serving/untitled.md)
-* [Eventing](di-san-zhang-eventing/README.md)
-  * [\[3.1 Service\]](di-san-zhang-eventing/3.1-service/README.md)
-    * [3.1.1 Eventing 概述](di-san-zhang-eventing/3.1-service/1.1-basicconcept.md)
-    * [3.1.2 Eventing 上手体验](di-san-zhang-eventing/3.1-service/1.1-basicconcept-1.md)
 * [\[第四章: Knative 网关\]](di-si-zhang-knative-wang-guan/README.md)
   * [\[4.1 流量揭秘\]](di-si-zhang-knative-wang-guan/4.1-liu-liang-jie-mi/README.md)
     * [4.1.1 Eventing 概述](di-si-zhang-knative-wang-guan/4.1-liu-liang-jie-mi/1.1-basicconcept.md)
