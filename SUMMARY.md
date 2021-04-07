@@ -14,18 +14,9 @@
 
 ---
 
-* [前言](foreword.md)
-* [基本概念\]](concept/README.md)
-  * [1.1 serverless 的前世今生](concept/1.1-basicconcept.md)
-  * [1.2 knative 简要介绍](concept/1.1-basicconcept-1.md)
-* [\[第二章：Serving\]](di-er-zhang-serving/README.md)
-  * [\[2.1 简介\]](di-er-zhang-serving/2.1-jian-jie/README.md)
-    * [2.1.1 Serving 概述](di-er-zhang-serving/2.1-jian-jie/1.1-basicconcept.md)
-    * [2.2 Serving 初体验](di-er-zhang-serving/2.1-jian-jie/1.1-basicconcept-1.md)
-  * [\[2.2 原理\]](di-er-zhang-serving/2.2-yuan-li/README.md)
-    * [2.2.1 Serving 基本原理](di-er-zhang-serving/2.2-yuan-li/1.1-basicconcept.md)
-    * [2.2.1 Serving 基本原理](di-er-zhang-serving/2.2-yuan-li/1.1-basicconcept-1.md)
-* [\[第三章：Eventing\]](di-san-zhang-eventing/README.md)
+* [Serving](serving/README.md)
+  * [Untitled](serving/untitled.md)
+* [Eventing](di-san-zhang-eventing/README.md)
   * [\[3.1 Service\]](di-san-zhang-eventing/3.1-service/README.md)
     * [3.1.1 Eventing 概述](di-san-zhang-eventing/3.1-service/1.1-basicconcept.md)
     * [3.1.2 Eventing 上手体验](di-san-zhang-eventing/3.1-service/1.1-basicconcept-1.md)
@@ -38,4 +29,10 @@
 * [\[第六章：knative 实践案例\]](di-liu-zhang-knative-shi-jian-an-li/README.md)
   * [\[6.1 证书\]](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/README.md)
     * [6.1.1 证书基础](di-liu-zhang-knative-shi-jian-an-li/6.1-zheng-shu/1.1-basicconcept.md)
+
+## Serving <a id="serving-1"></a>
+
+* [核心组件](serving-1/he-xin-zu-jian/README.md)
+  * [activator](serving-1/he-xin-zu-jian/activator.md)
+* [资源对象](serving-1/zi-yuan-dui-xiang.md)
 

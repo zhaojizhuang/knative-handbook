@@ -1,2 +1,2 @@
-# \[第三章：Eventing\]
+# Eventing
 
