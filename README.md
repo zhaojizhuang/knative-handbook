@@ -1,5 +1,9 @@
 # 序言
 
+![Github Last Commit](https://img.shields.io/github/last-commit/zhaojizhuang/knative-handbook)![Github Contributors](https://img.shields.io/github/contributors/zhaojizhuang/knative-handbook)
+
+
+
 [knative](https://knative.dev/) 是谷歌开源的 serverless 架构方案，旨在提供一套简单易用的 serverless 方案，把 serverless 标准化。目前参与的公司主要是 Google、Pivotal、IBM、Red Hat，2018年7月24日才刚刚对外发布，当前还处于快速发展的阶段。主要功能包括：
 
 * 基于容器的应用部署，支持多版本发布
