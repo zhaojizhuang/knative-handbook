@@ -13,11 +13,7 @@ Knative 发展非常迅速，旨在称为 Serverless 领域的事实标准。Kub
 
 ## Knative 是一个 Serverless 平台
 
-
-
 ## Knative 核心组件
-
-
 
 ## Knative 版本
 
@@ -27,6 +23,4 @@ Knative 发展非常迅速，旨在称为 Serverless 领域的事实标准。Kub
 | v0.20 | 2021年1月13号 |
 | v0.19 | 2020年11月11号 |
 | v0.18 |  |
-
-
 

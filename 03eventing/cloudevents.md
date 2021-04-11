@@ -1,7 +1,5 @@
 # CloudEvents
 
-
-
 | 字段 | 含义 | 是否必须 | Http Header key |
 | :--- | :--- | :--- | :--- |
 | id | 事件 id | 是 | Ce-Id |

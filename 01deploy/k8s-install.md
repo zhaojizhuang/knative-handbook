@@ -1,8 +1,8 @@
 # kubernetes 安装
 
-### 1. kubernetes 安装
+## 1. kubernetes 安装
 
-此处不在赘述，可查看[官网安装指南](https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) 
+此处不在赘述，可查看[官网安装指南](https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
 1. 安装 `docker`
 
@@ -14,7 +14,7 @@ yum-config-manager \
     http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
 
-2. 配置 `kubernetes` `yum` 源，对于国内访问不了 `kubernetes` 的问题，`centos`  可用阿里的`yum` 源,配置如下 
+1. 配置 `kubernetes` `yum` 源，对于国内访问不了 `kubernetes` 的问题，`centos`  可用阿里的`yum` 源,配置如下 
 
 ```text
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
@@ -29,14 +29,14 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
 EOF
 ```
 
- 2. 安装   `kubelet`  `kubectl` `kubeadm`
+1. 安装   `kubelet`  `kubectl` `kubeadm`
 
 ```text
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 ```
 
-### 2. 网络插件安装
+## 2. 网络插件安装
 
 安装 网络插件，此处用的是 \`cilium\`
 
@@ -45,8 +45,4 @@ sudo apt-get install -y kubelet kubeadm kubectl
 ```text
 kubectl create -f https://raw.githubusercontent.com/cilium/cilium/v1.9/install/kubernetes/quick-install.yaml
 ```
-
-
-
-
 
