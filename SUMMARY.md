@@ -33,6 +33,7 @@
 
 ## 5. 源码解读 <a id="05code-read"></a>
 
+* [Autoscaler](05code-read/autoscaler.md)
 * [activator](05code-read/untitled-1.md)
 
 ## 6. knative 实践案例 <a id="06practice"></a>
