@@ -98,6 +98,9 @@ knative-serving   0.21.0    True
 
 ### 1. 通过 CR 安装 Eventing 组件
 
+* 如果 `Broker` 想基于 `natss channel`，请按照 Tab `Natss channel` 中的教程（安装完成继续下一章的 Nats 安装）
+* 默认是基于内存的的 `channel` \(不会持久化消息\)
+
 {% tabs %}
 {% tab title="Natss channel" %}
 ```yaml

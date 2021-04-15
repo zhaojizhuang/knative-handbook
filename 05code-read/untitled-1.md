@@ -1,4 +1,2 @@
 # activator
 
-aaa
-
