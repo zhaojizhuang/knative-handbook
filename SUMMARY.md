@@ -11,6 +11,7 @@
 * [kubernetes 安装](01deploy/k8s-install.md)
 * [isito 安装](01deploy/isito-install.md)
 * [Knative 安装](01deploy/knative-install.md)
+* [Nats 安装（选装）](01deploy/nats-an-zhuang-xuan-zhuang.md)
 
 ## 2. Serving <a id="02serving"></a>
 
@@ -33,16 +34,9 @@
 
 ## 5. 源码解读 <a id="05code-read"></a>
 
-* [Autoscaler](05code-read/autoscaler.md)
 * [activator](05code-read/untitled-1.md)
 
 ## 6. knative 实践案例 <a id="06practice"></a>
 
 * [GRPC示例](06practice/untitled.md)
-
-## Knative官网文档
-
-* [Welcome to Knative](knative-guan-wang-wen-dang/welcome-to-knative/README.md)
-  * [Untitled](knative-guan-wang-wen-dang/welcome-to-knative/untitled/README.md)
-    * [Untitled](knative-guan-wang-wen-dang/welcome-to-knative/untitled/untitled.md)
 
