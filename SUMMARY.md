@@ -17,6 +17,7 @@
 
 * [cli 工具](user-guide/untitled.md)
 * [Knative 商业化版本](user-guide/knative-shang-ye-hua-ban-ben.md)
+* [Knative Serving 配置指南](user-guide/knative-serving-pei-zhi-zhi-nan.md)
 
 ## 2. Serving <a id="02serving"></a>
 
