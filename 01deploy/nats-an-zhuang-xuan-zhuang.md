@@ -67,7 +67,7 @@ natss-webhook-d59f4fb6f-5x9w2                           1/1     Running     0   
 安装到这一步还没完，还需要修改下 `nats controller` 和 `nats dispatcher` 中对接 `nats` 的配置: **nats url** 和 **cluster id**
 
 * 默认情况下 对接 `NATS Streamin` 的 url 是  `nats://nats-streaming.natss.svc:4222`, 
-* `NATS  Streaming` 的 `cluster id` 是 `knative-nats-streamingz`           这个值是[ Nats 安装时](https://github.com/knative-sandbox/eventing-natss/blob/main/config/broker/natss.yaml)指定的
+* `NATS  Streaming` 的 `cluster id` 是 `knative-nats-streaming`           这个值是[ Nats 安装时](https://github.com/knative-sandbox/eventing-natss/blob/main/config/broker/natss.yaml#L74)指定的
 
 `nats controller`   和  `nats dispatcher` 中添加如下 env：
 
@@ -76,7 +76,7 @@ env:
   - name: DEFAULT_NATSS_URL
     value: nats://natss.custom-namespace.svc.cluster.local:4222
   - name: DEFAULT_CLUSTER_ID
-    value: custom-cluster-id
+    value: knative-nats-streaming
   - name: SYSTEM_NAMESPACE
     valueFrom:
       fieldRef:
