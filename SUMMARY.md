@@ -17,7 +17,8 @@
 
 * [cli 工具](user-guide/untitled.md)
 * [Knative 商业化版本](user-guide/knative-shang-ye-hua-ban-ben.md)
-* [Knative Serving 用户指南](user-guide/knative-serving-pei-zhi-zhi-nan.md)
+* [Knative Serving 用户指南](user-guide/knative-serving-pei-zhi-zhi-nan/README.md)
+  * [第一个用例](user-guide/knative-serving-pei-zhi-zhi-nan/di-yi-ge-yong-li.md)
 
 ## 2. Serving <a id="02serving"></a>
 
