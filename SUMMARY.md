@@ -15,7 +15,8 @@
 
 ## 2. 用户指南 <a id="user-guide"></a>
 
-* [Untitled](user-guide/untitled.md)
+* [cli 工具](user-guide/untitled.md)
+* [Knative 商业化版本](user-guide/knative-shang-ye-hua-ban-ben.md)
 
 ## 2. Serving <a id="02serving"></a>
 
