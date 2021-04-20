@@ -1,4 +1,4 @@
-# 第一个用例 Hello world
+# 第一个 Serving 用例 Hello world
 
 ### 1. 创建一个名为 `service.yaml` 的文件，文件内容如下
 

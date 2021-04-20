@@ -18,7 +18,8 @@
 * [cli 工具](user-guide/untitled.md)
 * [Knative 商业化版本](user-guide/knative-shang-ye-hua-ban-ben.md)
 * [Knative Serving 用户指南](user-guide/knative-serving-pei-zhi-zhi-nan/README.md)
-  * [第一个用例 Hello world](user-guide/knative-serving-pei-zhi-zhi-nan/di-yi-ge-yong-li.md)
+  * [第一个 Serving 用例 Hello world](user-guide/knative-serving-pei-zhi-zhi-nan/di-yi-ge-yong-li.md)
+  * [为 Knative Service 配置私有镜像仓库](user-guide/knative-serving-pei-zhi-zhi-nan/wei-knative-service-pei-zhi-si-you-jing-xiang-cang-ku.md)
 
 ## 2. Serving <a id="02serving"></a>
 
@@ -26,6 +27,10 @@
 * [核心组件](02serving/component/README.md)
   * [autoscaler](02serving/component/autoscaler.md)
   * [activator](02serving/component/activator.md)
+  * [controller](02serving/component/controller.md)
+  * [webhook](02serving/component/webhook.md)
+  * [networking-certmanager](02serving/component/networking-certmanager.md)
+  * [networking-istio](02serving/component/networking-istio.md)
 * [资源对象](02serving/resource.md)
 
 ## 3. Eventing <a id="03eventing"></a>
