@@ -1,6 +1,6 @@
 # 如何基于 Knative 开发 自定义controller
 
-### 1. 为什么要开发 自定义 controller？
+## 1. 为什么要开发 自定义 controller？
 
 开源版本的 `Knative` 提供了扩缩容及事件驱动的架构，对于大部分场景的 `Serverless` 已经满足了，不过对于商业版本的 `Serverless` 平台来说，免不了要添加一些增强特性。
 
@@ -16,15 +16,15 @@
 
 ![](../.gitbook/assets/knativegate.png)
 
-### 2. How？
+## 2. How？
 
 对于 有过 `Kubernetes` `operator` 开发经验的同学来说，可能对 [**Kubebuilder**](https://cloudnative.to/kubebuilder/introduction.html) ****更熟悉一些，其实 `Knative` 自定义 控制器的开发更简单，下面一步一步介绍怎么开始
 
-#### 2.1  Fork 社区 Template
+### 2.1  Fork 社区 Template
 
 社区 项目地址在  [https://github.com/knative-sandbox/sample-controller](https://github.com/knative-sandbox/sample-controller)，直接 fork 到个人仓库。
 
-#### 2.2 sample-controller介绍
+### 2.2 sample-controller介绍
 
 代码下载到本地,目录如下，如下（此处省略掉不重要的文件）：
 
@@ -76,7 +76,13 @@ sample-controller
 * **pkg/client:** 这里是 执行 `hackupdate-codegen.sh` 后自动生成的
 * **pkg/reconciler**: 这里是控制器的主要逻辑，包括控制器主入口 `controller.go` 和对应的 `reconciler`逻辑
 
-#### 2.3 
+### 2.3 CRD 资源定义
+
+#### 1. 确定 `GKV`，即资源的 `Group、Kind、Version`    
+
+\`\`
+
+\`\`
 
 
 
