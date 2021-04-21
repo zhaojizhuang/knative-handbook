@@ -255,7 +255,7 @@ type Reconciler interface {
 
    5. 接下来就是上述第 4点说的自己实现的代码了 
 
-#### 5.控制器逻辑编写
+### 2.5 控制器逻辑编写
 
 代码主要在 如下两个文件：
 
@@ -273,19 +273,24 @@ var _ addressableservicereconciler.Finalizer = (*Reconciler)(nil)
 1. controller 中 代码如下
 
 ```go
-	# pkg/reconciler/addressableservice/controller.go#j
-	# 
+	# pkg/reconciler/addressableservice/controller.go#
+	
+	// 借助 injection 从 context 中获取 informer 
 	addressableserviceInformer := addressableserviceinformer.Get(ctx)
 	svcInformer := svcinformer.Get(ctx)
 
+  // 实例化  addressableservice 的 Reconciler
 	r := &Reconciler{
 		ServiceLister: svcInformer.Lister(),
 	}
+	
+	// 实例化 controller.impl 返回 供 controller 框架调用
 	impl := addressableservicereconciler.NewImpl(ctx, r)
 	r.Tracker = tracker.New(impl.EnqueueKey, controller.GetTrackerLease(ctx))
 
 	logger.Info("Setting up event handlers.")
 
+  // 添加 informer 的hander 函数
 	addressableserviceInformer.Informer().AddEventHandler(controller.HandleAll(impl.Enqueue))
 
 	svcInformer.Informer().AddEventHandler(controller.HandleAll(
@@ -300,9 +305,83 @@ var _ addressableservicereconciler.Finalizer = (*Reconciler)(nil)
 
 ```
 
+* handler函数
 
+为 `informer` 添加 函数除了实例中的  `Informer().AddEventHandler`，还可以 通过 `Informer().AddEventHandlerWithResyncPeriod` 确保除了 `watch` 之外，周期性将 `CR` 全量加入 工作队列中处理。
 
+* filter 函数 还可以添加如下 filter 函数，过滤进入 工作队列的 资源，\(在资源数量巨大时能优化性能\)
 
+```go
+	domainInformer.Informer().AddEventHandlerWithResyncPeriod(cache.FilteringResourceEventHandler{
+		FilterFunc: controller.FilterControllerGK(v1beta1.Kind("Function")),
+		Handler:    controller.HandleAll(impl.EnqueueControllerOf),
+	}, ControllerResyncPerion)
+
+	// k8s don't allow cross namespace owerreferences, so filter resource with  label
+	k8ssvcInformer.Informer().AddEventHandlerWithResyncPeriod(cache.FilteringResourceEventHandler{
+		FilterFunc: FilterLabelKeyExists(api.FuncNameLabelKey),
+		Handler:    controller.HandleAll(impl.EnqueueLabelOfNamespaceScopedResource(api.FuncNameSpaceLabelKey, api.FuncNameLabelKey)),
+	}, ControllerResyncPerion)
+```
+
+### 2.6 Reconciler 逻辑编写
+
+ 参考 `sample-controller/pkg/reconciler/addressableservice/addressableservice.go` 文件即可，其中注意
+
+`status` 在 `reconciler 中`调用  `xxx_lifecycle.go` 中的 状态设置函数可以，`controller` **框架会在 reconcile 流程结束后将 CR 资源的状态 通过 `kube-apiserver` 更新到 etcd  中**
+
+```go
+	# sample-controller/pkg/reconciler/addressableservice/addressableservice.go#76
+	o.Status.MarkServiceAvailable()
+	o.Status.Address = &duckv1.Addressable{
+		URL: &apis.URL{
+			Scheme: "http",
+			Host:   network.GetServiceHostname(o.Spec.ServiceName, o.Namespace),
+		},
+	}
+
+```
+
+### 2.7 调试
+
+#### 1. 生成 CRD 描述文件 并 apply 到集群
+
+1. 在 `sample-controller/cmd/schema/main.go` 中注册，如下：
+
+```go
+func main() {
+	registry.Register(&v1alpha1.AddressableService{})
+
+	if err := commands.New("knative.dev/sample-controller").Execute(); err != nil {
+		log.Fatal("Error during command execution: ", err)
+	}
+}
+
+```
+
+2. 执行命令
+
+```text
+go run cmd/schema/main.go dump AddressableService
+```
+
+将生成的 `yaml` 粘贴到 `sample-controller/config/300-addressableservice.yaml`   中的
+
+`spec.versions.schema.openAPIV3Schema` 下
+
+3. apply crd yaml，在 k8s 集群中执行
+
+```text
+kubectl apply -f config/300-addressableservice.yaml
+```
+
+ 4. IDE 中 debug
+
+如果是在 `mac` 中的 `IDE` 调试，将 `k8s` 集群中的 `config` 文件 复制一份，放在 `mac` 地址的 `~/.kube` 目录下,window linux 类似，config 放在用户目录下的 .kube目录下：
+
+为程序添加  环境变量 `SYSTEM_NAMESPACE` ,主要是用于 controller 选主，不设置会 panic
+
+**接下来，直接 `debug sample-controller/cmd/controller/main.go` 中的 `main` 函数即可 !**
 
 
 
