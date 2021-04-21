@@ -50,7 +50,7 @@
 
 ## 6.进阶开发 <a id="jin-jie-kai-fa"></a>
 
-* [Untitled](jin-jie-kai-fa/untitled.md)
+* [如何基于 Knative 开发 自定义controller](jin-jie-kai-fa/untitled.md)
 
 ## 6. knative 实践案例 <a id="06practice"></a>
 
