@@ -48,9 +48,9 @@
 
 * [activator](05code-read/untitled-1.md)
 
-## 6.进阶开发 <a id="jin-jie-kai-fa"></a>
+## 6.进阶开发 <a id="advanced-development"></a>
 
-* [如何基于 Knative 开发 自定义controller](jin-jie-kai-fa/custom-controller.md)
+* [如何基于 Knative 开发 自定义controller](advanced-development/custom-controller.md)
 
 ## 6. knative 实践案例 <a id="06practice"></a>
 
