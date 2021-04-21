@@ -205,7 +205,7 @@ bash hack/update-codegen.sh
 hack/../vendor/knative.dev/hack/library.sh: line 25: conditional binary operator expected
 ```
 
-### 2.4 控制器逻辑编写
+### 2.4 控制器逻辑介绍
 
 controller 入口文件
 
@@ -220,47 +220,89 @@ func main() {
 }
 ```
 
-`sharedmain.Main` 函数传入 `controller` 的初始化方法，该方法会返回一个 `controller` 的实现 `controller.impl` ,`impl` 的定义如下，`sharedmain.Main`
+`sharedmain.Main` 函数传入 `controller` 的初始化方法，该方法会返回一个 `controller` 的实现 `controller.impl` ,`impl` 的定义如下
 
 ```go
 # https://github.com/knative/pkg 
 # knative.dev/pkg/controller/controller.go#188
 
 type Impl struct {
-	// Name is the unique name for this controller workqueue within this process.
-	// This is used for surfacing metrics, and per-controller leader election.
+// 控制器的名字
 	Name string
 
-	// Reconciler is the workhorse of this controller, it is fed the keys
-	// from the workqueue to process.  Public for testing.
+	// Reconciler 是主要实现逻辑，实现了接口 	Reconcile(ctx context.Context, key string) error
+  // Reconciler 会调用
 	Reconciler Reconciler
 
-	// workQueue is a rate-limited two-lane work queue.
-	// This is used to queue work to be processed instead of performing it as
-	// soon as a change happens. This means we can ensure we only process a
-	// fixed amount of resources at a time, and makes it easy to ensure we are
-	// never processing the same item simultaneously in two different workers.
-	// The slow queue is used for global resync and other background processes
-	// which are not required to complete at the highest priority.
+// 工作队列
 	workQueue *twoLaneQueue
-
-	// Sugared logger is easier to use but is not as performant as the
-	// raw logger. In performance critical paths, call logger.Desugar()
-	// and use the returned raw logger instead. In addition to the
-	// performance benefits, raw logger also preserves type-safety at
-	// the expense of slightly greater verbosity.
-	logger *zap.SugaredLogger
-
-	// StatsReporter is used to send common controller metrics.
-	statsReporter StatsReporter
 }
 
 # knative.dev/pkg/controller/controller.go#65
 type Reconciler interface {
 	Reconcile(ctx context.Context, key string) error
-}
 
 ```
 
-\`\`
+`sharedmain.Main`  **会执行以下事情**：
+
+1. 启动各种 `informer`，启动 所有 `controller`， `knative.dev/pkg/injection/sharedmain/main.go#238`
+2. 执行工作流 `processNextWorkItem` ，`knative.dev/pkg/injection/sharedmain/main.go#468`
+3. 调用 `Reconciler` 接口的 `Reconcile(ctx context.Context,key string) err` 函数
+4. `Reconcile(ctx context.Context,key string) err` 函数调用 具体的 Reconciler 的实现接口 \(**这里就是用户自己实现的代码了**\)_`sample-controller/pkg/client/injection/reconciler/samples/v1alpha1/addressableservice/reconciler.go#181`_
+   * `FinalizeKind(ctx context.Context, o v1alpha1.AddressableService) reconciler.Event`
+   * `FinalizeKind(ctx context.Context, o v1alpha1.AddressableService) reconciler.Event`
+
+   5. 接下来就是上述第 4点说的自己实现的代码了 
+
+#### 5.控制器逻辑编写
+
+代码主要在 如下两个文件：
+
+* sample-controller/pkg/reconciler/addressableservice/addressableservice.go
+* sample-controller/pkg/reconciler/addressableservice/controller.go
+
+`addressableservice.go` 实现 `AddressableService` 的 `ReconcileKind` 接口,如果删除 `CR` 资源时要做清理动作，可以实现 `Finalizer` 的 `FinalizeKind` 接口,可通过以下声明 确保接口的实现（IDE 一键生成函数框架）
+
+```go
+// Check that our Reconciler implements Interface
+var _ addressableservicereconciler.Interface = (*Reconciler)(nil)
+var _ addressableservicereconciler.Finalizer = (*Reconciler)(nil)
+```
+
+1. controller 中 代码如下
+
+```go
+	# pkg/reconciler/addressableservice/controller.go#j
+	# 
+	addressableserviceInformer := addressableserviceinformer.Get(ctx)
+	svcInformer := svcinformer.Get(ctx)
+
+	r := &Reconciler{
+		ServiceLister: svcInformer.Lister(),
+	}
+	impl := addressableservicereconciler.NewImpl(ctx, r)
+	r.Tracker = tracker.New(impl.EnqueueKey, controller.GetTrackerLease(ctx))
+
+	logger.Info("Setting up event handlers.")
+
+	addressableserviceInformer.Informer().AddEventHandler(controller.HandleAll(impl.Enqueue))
+
+	svcInformer.Informer().AddEventHandler(controller.HandleAll(
+		// Call the tracker's OnChanged method, but we've seen the objects
+		// coming through this path missing TypeMeta, so ensure it is properly
+		// populated.
+		controller.EnsureTypeMeta(
+			r.Tracker.OnChanged,
+			corev1.SchemeGroupVersion.WithKind("Service"),
+		),
+	))
+
+```
+
+
+
+
+
+
 
