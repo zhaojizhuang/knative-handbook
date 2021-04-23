@@ -10,7 +10,7 @@
 * 构建镜像的过程不需要 `Docker`   ，因此可以用在轻量化的 `CI/CD` 场景。
 * 支持 `yaml` 模板，可以直接用于部署 `Kubernetes` 应用。
 
-### 如何使用
+## 如何使用
 
 官方地址在这 [https://github.com/google/ko](https://github.com/google/ko)
 
@@ -189,6 +189,30 @@ ko apply -f ./
 2021/04/23 22:18:24 existing blob: sha256:5dea5ec2316d4a067b946b15c3c4f140b4f2ad607e73e9bc41b673ee5ebb99a3
 2021/04/23 22:18:25 zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648:latest: digest: sha256:21d352ec9f9079f8da4c91cfe2461df51a404c079f262390b19fff4cb2ce15a0 size: 750
 2021/04/23 22:18:25 Published zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648@sha256:21d352ec9f9079f8da4c91cfe2461df51a404c079f262390b19fff4cb2ce15a0
+deployment.apps/hello-world configured
+```
+
+### 7. 替换基础镜像
+
+可以通过 `ko` 的 `config` 文件来设置基础镜像, 配置文件名为 `.ko.yaml` ko 执行时默认会在当前目录下寻找 `.ko.yaml` 文件，也可以通过 环境变量 `KO_CONFIG_PATH` 来指定 `.ko.yaml` 的路径
+
+```bash
+# ~/.ko.yaml
+$ defaultBaseImage: ubuntu
+$ export KO_CONFIG_PATH=~/
+$ ko apply  -f ./config
+
+2021/04/23 22:28:50 Using base ubuntu for github.com/http-helloworld/cmd/helloworld
+2021/04/23 22:29:00 Building github.com/http-helloworld/cmd/helloworld for linux/amd64
+2021/04/23 22:29:01 Publishing zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648:latest
+2021/04/23 22:29:14 existing blob: sha256:72164b581b02b1eb297b403bcc8fc1bfa245cb52e103a3a525a0835a58ff58e2
+2021/04/23 22:29:14 existing blob: sha256:d99fea081f251cc06ce68ce7cb224e2a0f63babd03ee9dd6bb03f6bf76dcb5a5
+2021/04/23 22:29:14 mounted blob: sha256:a70d879fa5984474288d52009479054b8bb2993de2a1859f43b5480600cecb24
+2021/04/23 22:29:14 mounted blob: sha256:c4394a92d1f8760cf7d17fee0bcee732c94c5b858dd8d19c7ff02beecf3b4e83
+2021/04/23 22:29:14 mounted blob: sha256:10e6159c56c084c858f5de2416454ac0a49ddda47b764e4379c5d5a147c9bf5f
+2021/04/23 22:29:16 pushed blob: sha256:91d93e3477d55b71f5760478dcab690846ca5f76d92bbef874970460b3e73e5b
+2021/04/23 22:29:17 zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648:latest: digest: sha256:623cb60ff10751f3f6a5f6570aaf5f49aee5fb6afc1ef5cfde4dd48a8b4d57df size: 1072
+2021/04/23 22:29:17 Published zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648@sha256:623cb60ff10751f3f6a5f6570aaf5f49aee5fb6afc1ef5cfde4dd48a8b4d57df
 deployment.apps/hello-world configured
 ```
 
