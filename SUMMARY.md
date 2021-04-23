@@ -51,7 +51,7 @@
 ## 6.进阶开发 <a id="advanced-development"></a>
 
 * [如何基于 Knative 开发 自定义controller](advanced-development/custom-controller.md)
-* [如何利用 Google 开源工具 Ko 在 kubernetes 上构建并部署 Go 应用](advanced-development/ru-he-li-yong-google-kai-yuan-gong-ju-ko-zai-kubernetes-shang-gou-jian-bing-bu-shu-go-ying-yong.md)
+* [如何利用 Google 开源工具 Ko 在 kubernetes 上构建并部署 Go 应用](advanced-development/ko-dev.md)
 
 ## 6. knative 实践案例 <a id="06practice"></a>
 
