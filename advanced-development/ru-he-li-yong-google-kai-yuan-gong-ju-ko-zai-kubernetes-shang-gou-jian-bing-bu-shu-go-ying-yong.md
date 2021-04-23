@@ -138,7 +138,8 @@ spec:
 然后执行 `ko resolve -f deploy.yaml` 结果如下，可以看到 `ko://github.com/http-helloworld/cmd/helloworld` 被替换成了 `zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648@sha256:21d352ec9f9079f8da4c91cfe2461df51a404c079f262390b19fff4cb2ce15a0`
 
 ```bash
-ko resolve -f deploy.yaml
+$ ko resolve -f deploy.yaml
+
 2021/04/23 22:09:19 Using base gcr.io/distroless/static:nonroot for github.com/http-helloworld/cmd/helloworld
 2021/04/23 22:09:19 No matching credentials were found for "gcr.io/distroless/static", falling back on anonymous
 2021/04/23 22:09:23 Building github.com/http-helloworld/cmd/helloworld for linux/amd64
@@ -176,8 +177,8 @@ spec:
 `ko apply -f xxx.yaml` 用法同 `kubectl apply -f xxx.yaml` ,**不同的是，`ko apply -f` 相当于先执行 `resolve` 将 `ko://xxx` 替换成镜像地址，然后再执行 `kubectl apply -f`  。**
 
 ```bash
-cd $GOPATH/src/github.com/http-helloworld/config
-ko apply -f ./
+$ cd $GOPATH/src/github.com/http-helloworld/config
+$ ko apply -f ./
 
 2021/04/23 22:18:10 Using base gcr.io/distroless/static:nonroot for github.com/http-helloworld/cmd/helloworld
 2021/04/23 22:18:10 No matching credentials were found for "gcr.io/distroless/static", falling back on anonymous
@@ -194,11 +195,19 @@ deployment.apps/hello-world configured
 
 ### 7. 替换基础镜像
 
-可以通过 `ko` 的 `config` 文件来设置基础镜像, 配置文件名为 `.ko.yaml` ko 执行时默认会在当前目录下寻找 `.ko.yaml` 文件，也可以通过 环境变量 `KO_CONFIG_PATH` 来指定 `.ko.yaml` 的路径
+可以通过 `ko` 的 `config` 文件中的 `defaultBaseImage` 变量来设置基础镜像, 配置文件名为 `.ko.yaml` ,
+
+ko 执行时默认会在当前目录下寻找 `.ko.yaml` 文件，也可以通过 环境变量 `KO_CONFIG_PATH` 来指定 `.ko.yaml` 的路径
 
 ```bash
 # ~/.ko.yaml
-$ defaultBaseImage: ubuntu
+defaultBaseImage: ubuntu
+```
+
+执行如下 
+
+```bash
+
 $ export KO_CONFIG_PATH=~/
 $ ko apply  -f ./config
 
@@ -215,4 +224,32 @@ $ ko apply  -f ./config
 2021/04/23 22:29:17 Published zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648@sha256:623cb60ff10751f3f6a5f6570aaf5f49aee5fb6afc1ef5cfde4dd48a8b4d57df
 deployment.apps/hello-world configured
 ```
+
+还可以 通过`.ko.yaml` 文件中的 `baseImageOverrides` 对指定编译二进制替换基础镜像，如本示例中，设置如下：
+
+```bash
+# ~/.ko.yaml
+defaultBaseImage: ubuntu
+baseImageOverrides: 
+  github.com/http-helloworld/cmd/helloworld: centos
+```
+
+ 修改 `.ko.yaml` 后，执行命令
+
+```bash
+$ ko apply -f config
+
+2021/04/23 22:38:14 Using base centos for github.com/http-helloworld/cmd/helloworld
+2021/04/23 22:38:26 Building github.com/http-helloworld/cmd/helloworld for linux/amd64
+2021/04/23 22:38:27 Publishing zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648:latest
+2021/04/23 22:38:29 existing blob: sha256:72164b581b02b1eb297b403bcc8fc1bfa245cb52e103a3a525a0835a58ff58e2
+2021/04/23 22:38:29 existing blob: sha256:d99fea081f251cc06ce68ce7cb224e2a0f63babd03ee9dd6bb03f6bf76dcb5a5
+2021/04/23 22:38:29 mounted blob: sha256:7a0437f04f83f084b7ed68ad9c4a4947e12fc4e1b006b38129bac89114ec3621
+2021/04/23 22:38:32 pushed blob: sha256:e909db5555a2c7310e605e60a47a98661c9a5c54d567f741a8d677f84c8a887f
+2021/04/23 22:38:32 zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648:latest: digest: sha256:dc009335be23a9eee0235e425218f18a68c3210b00adac7cfe736d9bf38f4121 size: 752
+2021/04/23 22:38:32 Published zhaojizhuang66/helloworld-cbcbba9849adcc25ce56a08dfd597648@sha256:dc009335be23a9eee0235e425218f18a68c3210b00adac7cfe736d9bf38f4121
+deployment.apps/hello-world configured
+```
+
+
 
