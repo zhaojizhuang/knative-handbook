@@ -19,7 +19,7 @@ Knative 发展非常迅速，旨在称为 Serverless 领域的事实标准。Kub
 
 * 中文：
   * Gitbook: [zhaojizhuang.gitbook.io/knative](https://zhaojizhuang.gitbook.io/knative)
-  * [Github](https://github.com/zhaojizhuang/knative-handbook)
+  * Github: [github.com/zhaojizhuang/knative-handbook](https://github.com/zhaojizhuang/knative-handbook)
 
 ### 项目源码 <a id="&#x9879;&#x76EE;&#x6E90;&#x7801;"></a>
 
