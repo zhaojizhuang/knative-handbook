@@ -30,8 +30,6 @@ Knative 发展非常迅速，旨在称为 Serverless 领域的事实标准。Kub
 
 ### 微信公众号 <a id="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;"></a>
 
-
-
 扫码关注微信公众号，回复关键字即可在微信中查看相关章节。
 
 ![](.gitbook/assets/knative.png)
