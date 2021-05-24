@@ -23,7 +23,8 @@
 
 ## 2. Serving <a id="02serving"></a>
 
-* [功能及配置](02serving/config.md)
+* [功能及配置](02serving/config/README.md)
+  * [在Knative中使用HPA](02serving/config/zai-knative-zhong-shi-yong-hpa.md)
 * [核心组件](02serving/component/README.md)
   * [autoscaler](02serving/component/autoscaler.md)
   * [activator](02serving/component/activator.md)
