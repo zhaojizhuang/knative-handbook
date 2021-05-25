@@ -23,9 +23,10 @@
 
 ## 2. Serving <a id="02serving"></a>
 
-* [功能及配置](02serving/config/README.md)
-  * [基于流量请求数实现服务自动扩缩容](02serving/config/ji-yu-liu-liang-qing-qiu-shu-shi-xian-fu-wu-zi-dong-kuo-suo-rong.md)
-  * [在Knative中使用HPA](02serving/config/zai-knative-zhong-shi-yong-hpa.md)
+* [功能及配置](02serving/config.md)
+* [自动扩缩容 KPA 配置](02serving/zi-dong-kuo-suo-rong-kpa-pei-zhi/README.md)
+  * [基于流量请求数实现服务自动扩缩容](02serving/zi-dong-kuo-suo-rong-kpa-pei-zhi/ji-yu-liu-liang-qing-qiu-shu-shi-xian-fu-wu-zi-dong-kuo-suo-rong.md)
+  * [在Knative中使用HPA](02serving/zi-dong-kuo-suo-rong-kpa-pei-zhi/zai-knative-zhong-shi-yong-hpa.md)
 * [核心组件](02serving/component/README.md)
   * [autoscaler](02serving/component/autoscaler.md)
   * [activator](02serving/component/activator.md)
