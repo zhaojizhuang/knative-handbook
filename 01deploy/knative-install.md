@@ -7,7 +7,7 @@
 通过下面的命令安装  v0.21.0 版本的 **Knative  operator**
 
 ```text
-kubectl apply -f https://github.com/knative/operator/releases/download/v0.21.0/operator.yaml
+kubectl apply -f https://github.com/knative/operator/releases/download/v0.21.0/operator.yaml -n knative-serving
 ```
 
 ## 2. 安装 Serving 
