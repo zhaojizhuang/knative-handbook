@@ -47,16 +47,20 @@
 
 * [Untitled](04observe/untitled.md)
 
-## 5. 源码解读 <a id="05code-read"></a>
+## 5. 性能测试 <a id="xing-neng-ce-shi"></a>
+
+* [Untitled](xing-neng-ce-shi/untitled.md)
+
+## 6. 源码解读 <a id="05code-read"></a>
 
 * [activator](05code-read/untitled-1.md)
 
-## 6.进阶开发 <a id="advanced-development"></a>
+## 7.进阶开发 <a id="advanced-development"></a>
 
 * [如何基于 Knative 开发 自定义controller](advanced-development/custom-controller.md)
 * [如何利用 Google 开源工具 Ko 在 kubernetes 上构建并部署 Go 应用](advanced-development/ko-dev.md)
 
-## 6. knative 实践案例 <a id="06practice"></a>
+## 8. knative 实践案例 <a id="06practice"></a>
 
 * [GRPC示例](06practice/untitled.md)
 
