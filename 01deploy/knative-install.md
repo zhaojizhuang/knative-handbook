@@ -4,7 +4,7 @@
 
 ## 1. Knative Operator 安装 
 
-通过下面的命令安装  v0.21.0 版本的 **Knative  operator**
+通过下面的命令安装  v0.23.0 版本的 **Knative  operator**
 
 ```text
 kubectl apply -f https://github.com/knative/operator/releases/download/v0.23.0/operator.yaml 
