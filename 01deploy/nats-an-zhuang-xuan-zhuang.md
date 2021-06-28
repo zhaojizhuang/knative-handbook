@@ -50,7 +50,7 @@ EOF
 `Nats controller` 和 `Nats dispatcher` 是  `Knative Eventing` 对接 `Natss` 的组件
 
 ```bash
-kubectl apply -f https://github.com/knative-sandbox/eventing-natss/releases/download/v0.21.0/eventing-natss.yaml
+kubectl apply -f https://github.com/knative-sandbox/eventing-natss/releases/download/v0.23.0/eventing-natss.yaml
 ```
 
 安装成功之后会看到下面几个组件
