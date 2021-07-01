@@ -38,15 +38,15 @@ sudo apt-get install -y kubelet kubeadm kubectl
 
 ### 2. 网络插件安装
 
-安装 网络插件，此处用的是 \`cilium\`
+安装 网络插件，此处用的是 `cilium`
 
-参考[官网安装指南](https://docs.cilium.io/en/v1.9/gettingstarted/k8s-install-default/), 一行命令搞定
+参考[官网安装指南](https://docs.cilium.io/en/v1.10/gettingstarted/k8s-install-helm/#installation-using-helm), 一行命令搞定
 
 ```text
-kubectl create -f https://raw.githubusercontent.com/cilium/cilium/v1.9/install/kubernetes/quick-install.yaml
+helm install cilium cilium/cilium --version 1.10.1 \
+--namespace kube-system \
+--set kubeProxyReplacement=stric
 ```
-
-
 
 
 
