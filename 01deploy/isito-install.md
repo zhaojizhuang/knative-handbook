@@ -52,11 +52,6 @@ spec:
     ingressGateways:
       - enabled: true
         name: istio-ingressgateway #这个是默认启用的
-      - enabled: true
-        label:
-          app: cluster-local-gateway
-          istio: cluster-local-gateway
-        name: cluster-local-gateway  # 这个默认是不启用的，如果 knative 启用集群内访问，这里要打开
   meshConfig:
     rootNamespace: istio-system #istio的 namespace
   values:
