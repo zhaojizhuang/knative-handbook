@@ -49,7 +49,7 @@ spec:
         {{end -}}
           .{{.Domain}}
     istio:
-      local-gateway.knative-serving.cluster-local-gateway: "cluster-local-gateway.istio-system.svc.cluster.local"
+      local-gateway.knative-serving.knative-local-gateway: "knative-local-gateway.istio-system.svc.cluster.local"
     # image
   registry:
     override:
