@@ -45,7 +45,7 @@ sudo apt-get install -y kubelet kubeadm kubectl
 ```text
 helm install cilium cilium/cilium --version 1.10.1 \
 --namespace kube-system \
---set kubeProxyReplacement=stric
+--set kubeProxyReplacement=strict
 ```
 
 
