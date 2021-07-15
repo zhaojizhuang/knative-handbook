@@ -7,7 +7,7 @@
 通过下面的命令安装  v0.23.0 版本的 **Knative  operator**
 
 ```text
-kubectl apply -f https://github.com/knative/operator/releases/download/v0.23.0/operator.yaml 
+kubectl apply -f https://github.com/knative/operator/releases/download/v0.24.0/operator.yaml 
 ```
 
 ## 2. 安装 Serving 
@@ -27,7 +27,7 @@ metadata:
   name: knative-serving
   namespace: knative-serving
 spec:
-  version: 0.23.0
+  version: 0.24.0
   # config
   config:
     defaults:
@@ -36,7 +36,7 @@ spec:
       enable-scale-to-zero: "true"
     deployment:
       # replace queue
-      queueSidecarImage: gcr.io/knative-releases/knative.dev/serving/cmd/queue:v0.23.0
+      queueSidecarImage: gcr.io/knative-releases/knative.dev/serving/cmd/queue:v0.24.0
     domain:
       mydomain.com: |
       
@@ -50,19 +50,20 @@ spec:
           .{{.Domain}}
     istio:
       local-gateway.knative-serving.knative-local-gateway: "knative-local-gateway.istio-system.svc.cluster.local"
-    # image
-  registry:
-    override:
+EOF 
+       # image
+  #registry:
+    #override:
       # replace images 此处可换为自己的私有镜像,这里用的原生默认的镜像，如果要自己替换，按照下面的选项一次替换即可
-      activator: gcr.io/knative-releases/knative.dev/serving/cmd/activator:v0.23.0
-      webhook: gcr.io/knative-releases/knative.dev/serving/cmd/webhook:v0.23.0
-      controller: gcr.io/knative-releases/knative.dev/serving/cmd/controller:v0.23.0
-      autoscaler: gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler:v0.23.0
-      autoscaler-hpa: gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler-hpa:v0.23.0
-      istio-webhook/webhook: gcr.io/knative-releases/knative.dev/net-istio/cmd/webhook:v0.23.0
-      networking-istio: gcr.io/knative-releases/knative.dev/net-istio/cmd/controller:v0.23.0
+      #activator: gcr.io/knative-releases/knative.dev/serving/cmd/activator:v0.24.0
+      #webhook: gcr.io/knative-releases/knative.dev/serving/cmd/webhook:v0.24.0
+      #controller: gcr.io/knative-releases/knative.dev/serving/cmd/controller:v0.23.0
+      #autoscaler: gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler:v0.23.0
+      #autoscaler-hpa: gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler-hpa:v0.23.0
+      #istio-webhook/webhook: gcr.io/knative-releases/knative.dev/net-istio/cmd/webhook:v0.23.0
+      #networking-istio: gcr.io/knative-releases/knative.dev/net-istio/cmd/controller:v0.23.0
      # migrate: gcr.io/knative-releases/knative.dev/serving/vendor/knative.dev/pkg/apiextensions/storageversion/cmd/migrate@sha256:4e44b147321c96767328f6c6551964c93c9805ae14ff9f99a01c01a02c056a38
-EOF
+#EOF
 ```
 
 ### 2. 安装 istio 组件
@@ -91,7 +92,7 @@ webhook            1/1     1            1           17s
 ```text
 $ kubectl get knativeservings.operator.knative.dev -n knative-serving
 NAME              VERSION   READY   REASON
-knative-serving   0.23.0    True
+knative-serving   0.24.0    True
 ```
 
 ## 4. 安装 Eventing
@@ -116,7 +117,10 @@ metadata:
   name: knative-eventing
   namespace: knative-eventing
 spec:
-  version: 0.23.0
+  source:
+    natss:
+      enabled: false
+  version: 0.24.0
   defaultBrokerClass: MTChannelBasedBroker
   config:
     # 配置 Broker 默认的 channel 是natss

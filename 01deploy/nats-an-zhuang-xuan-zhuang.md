@@ -4,7 +4,7 @@
 
 ```text
 kubectl create ns natss
-kubectl apply -f https://raw.githubusercontent.com/knative-sandbox/eventing-natss/release-0.23/config/broker/natss.yaml
+kubectl apply -f https://raw.githubusercontent.com/knative-sandbox/eventing-natss/release-0.24/config/broker/natss.yaml
 ```
 
 {% hint style="info" %}
